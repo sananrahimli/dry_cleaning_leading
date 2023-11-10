@@ -1931,6 +1931,109 @@ section#policy {
     }
 }
 
-// @media screen and (max-width: 480px) {
+@media screen and (max-width: 480px) {
+    header nav .header__logo a::before {
+        width: 33px;
+        height: 33px;
+    }
+    header nav .header__logo a {
+        font-size: 1rem;
+        padding-left: 40px;
+    }
+    #mobileBurger {margin-left: 0.5rem;}
+    header nav .header__feedback a.feedback_call {
+        padding: 0.5rem;
+        font-size: 0.7rem;
+    }
+    header > .container {
+        padding: 0 12px;
+    }
+    section#main .main__informer .informer__title {
+        font-size: 1.7rem;
+    }
+    section#main .main__informer .informer__button a {font-size: 1rem;}
+    section#main .main__informer .informer__button a i {margin-left: auto;}
+    .container.twoBlock .content {
+        width: 100%;
+        max-width: 100%;
+    }
+    .container.twoBlock h2.titlePage {
+        font-size: 1.3rem;
+    }
+    section#consultation .consultation__content h2 {
+        font-size: 2.3rem;
+    }
+    section#consultation .consultation__content {padding-right: 0;}
+    section#consultation .consultation__form {padding: 0;}
     
-// }
+
+    section#prices .prices__content .prices__content__products .product__item {
+        padding: 1rem;
+        img {
+            position: relative;
+        }
+        .price {
+            margin: 1rem 0;
+        }
+        h3.name {
+            margin-bottom: 4rem;
+        }
+    }
+    .obrabotka__left {
+        width: 100%;
+        p.title {
+            font-size: 1.6rem !important;
+        }
+        p.description {
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+    }
+    section#services .services__borderContent h2, section#services .services__blockContent h3, section#post .content .left h3 {
+        font-size: 1.6rem;
+    }
+    section#cleaning .flex .cleaning__one h3, section#reviews .container > .flex .reviews_content h2.titlePage {
+        font-size: 1.8rem;
+        margin: 0 0 1rem;
+    }
+    section#feedback_two input {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+    section#reviews .container > .flex .reviews_slider .swiper-slide .review__item .flex .picture {
+        display: none;
+    }
+    section#reviews .container > .flex .reviews_slider .swiper-slide .review__item .flex .text {width: 100%;}
+    section#reviews .container > .flex .reviews_slider .swiper-slide .review__item {
+        height: auto;
+    }
+    section#reviews .container > .flex .reviews_content p.desc {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+    section#reviews .container > .flex .reviews_content ul.static {
+        flex-wrap: wrap;
+        justify-content: center;
+        row-gap: 1rem;
+    }
+    section#reviews .container > .flex .reviews_content ul.static li {
+        width: 47%;
+        height: 125px;
+    }
+    section#about .container > .flex .about__informer p.contacts_name {display: none;}
+    section#about .container > .flex .about__informer ul.contacts {width: 100%;}
+    section#about .container > .flex .about__informer ul.contacts {
+        gap: 1rem;
+        li {
+            width: auto;
+        }
+    }
+
+    .modal .modal__content .main .modalForm form label.labelMain .radio {
+        flex-wrap: wrap;
+        row-gap: 1rem;
+    }
+    .modal .modal__content .main .modalForm form label.labelMain .radio label {width: 100%;}
+    .modal .modal__content .main .modalForm form button {font-size: 1rem;}
+    .modal {padding-top: 8rem;}
+}

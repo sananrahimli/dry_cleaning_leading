@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
     <title>ПРОФЕССИОНАЛЬНАЯ ХИМЧИСТКА МЯГКОЙ МЕБЕЛИ И КОВРОВ В ЕКАТЕРИНБУРГЕ</title>
     <link rel="stylesheet" href="./assets/scss/style.css">
     <link rel="stylesheet" href="./assets/scss/icons.css">
@@ -19,15 +19,18 @@
             </div>
             <ul class="header__menu flex">
                 <li class="active"><a href="">Главная</a></li>
-                <li><a href="">Цены</a></li>
-                <li><a href="">Отзывы</a></li>
-                <li><a href="">Компаниям</a></li>
-                <li><a href="">FAQ</a></li>
-                <li><a href="">Контакты</a></li>
+                <li><a href="#prices">Цены</a></li>
+                <li><a href="#reviews">Отзывы</a></li>
+                <li><a href="#">Компаниям</a></li>
+                <li><a href="#question">FAQ</a></li>
+                <li><a href="#footer">Контакты</a></li>
             </ul>
             <div class="header__feedback flex">
                 <a href="" class="feedback_online modalOpen" data-modal="feedback_order">Онлайн заявка</a>
                 <a href="" class="feedback_call modalOpen" data-modal="feedback_callModal">Бесплатный звонок <i class="icon-call"></i></a>
+            </div>
+            <div id="mobileBurger" style="display: none;">
+                <button id="burgerMenu"><i></i><i></i><i></i></button>
             </div>
         </nav>
     </div>
@@ -54,7 +57,7 @@
 
 
 
-<footer>
+<footer id="footer">
     <div class="container">
         <div class="flex">
             <div class="footer_contacts">
@@ -84,8 +87,8 @@
                     
                     </div>
                     <ul class="links flex">
-                        <li><a href="">Политическая конфиденциальность</a></li>
-                        <li><a href="">Правила</a></li>
+                        <li><a href="./policy.html" target="_blank">Политическая конфиденциальность</a></li>
+                        <li><a href="./policy.html" target="_blank">Правила</a></li>
                     </ul>
                </div>
                <div class="right">
@@ -96,21 +99,24 @@
                 <div class="rekviziti">
                     <h4>Реквизиты</h4>
                     <ul>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
-                        <li>1</li>
-                        <li>2</li>
-                        <li>3</li>
-                        <li>4</li>
-                        <li>5</li>
+                        «Чисто и точка»
+
+                                <li>ИНН</li>
+                                <li>ОГРН/ОГРНИП</li>
+                                <li>323366800102030</li>
+                                <li>Расчетный счет</li>
+                                <li>361704657337</li>
+                                <li>40802810900005350845</li>
+                                <li>Банк</li>
+                                <li>АО "ТИНЬКОФФ БАНК"</li>
+                                <li>ИНН банка</li>
+                                <li>7710140679</li>
+                                <li>БИК банка</li>
+                                <li>044525974</li>
+                                <li>Корреспондентский счет банка</li>
+                                <li>30101810145250000974</li>
+                                <li>Юридический адрес банка</li>
+                                <li>Москва, 127287, ул. Хуторская 2-я, д. 38А, стр. 26</li>
                     </ul>
                 <button id="moreRekz"></button>
                 </div>
@@ -129,20 +135,20 @@
     <div class="modal__content">
        <div class="main flex">
             <div class="picture">
-                <img src="https://www.eco-chistka.ru/files/604/86cb749474/shutterstock_435176716.jpg" alt="">
+                <img src="./assets/images/about/2.jpg" alt="">
             </div>
             <div class="modalForm">
                 <h2>Закажите обратный звонок</h2>
                 <form action="">
                     <label for="" class="labelMain">
                         <p>Введите ваш телефон:</p>
-                        <input type="text" placeholder="+7 (___) ___-__-__">
+                        <input type="text" placeholder="+7 (___) ___-__-__" required>
                     </label>
                     <label for="" class="labelMain">
                         <p>Каким способом с вами лучше связаться?</p>
                         <div class="radio flex">
                             <label for="callType_phone" class="active">
-                                <input type="radio" name="callType" id="callType_phone">
+                                <input type="radio" name="callType" id="callType_phone" checked>
                                 <span><i class="icon-call"></i> По телефону</span>
                             </label>
                             <label for="callType_whatsapp" class="">
@@ -162,7 +168,7 @@
                             <div class="bytime">По времени</div>
                         </div>
                     </label>
-                    <label for="" class="labelMain">
+                    <label for="" class="labelMain disableTimeInput noness">
                         <p>Когда вам будет удобно принять звонок?</p>
                         <input type="text" placeholder="Например, завтра в 12:00">
                     </label>
@@ -171,7 +177,7 @@
                         <label for="checkedForm_callModal" class="checkboxMain flex">
                             <input type="checkbox" name="checkedForm_callModal" id="checkedForm_callModal" required="" checked="">
                             <i class="icon-checkmark-square-svgrepo-com"></i>
-                            <p>Я принимаю <a href="">условия передачи информации</a></p>
+                            <p>Я принимаю <a href="./policy.html" target="_blank">условия передачи информации</a></p>
                         </label>
                     </div>
                 </form>
@@ -187,26 +193,26 @@
     <div class="modal__content">
        <div class="main flex">
             <div class="picture">
-                <img src="https://www.eco-chistka.ru/files/604/86cb749474/shutterstock_435176716.jpg" alt="">
+                <img src="./assets/images/about/2.jpg" alt="">
             </div>
             <div class="modalForm">
                 <h2>Онлайн заказ</h2>
                 <form action="">
                     <label for="" class="labelMain">
                         <p>Введите ваше имя:</p>
-                        <input type="text" placeholder="Антон">
+                        <input type="text" placeholder="Александр" required>
                     </label>
 
                     <label for="" class="labelMain">
                         <p>Введите ваш телефон:</p>
-                        <input type="text" placeholder="+7 (___) ___-__-__">
+                        <input type="text" placeholder="+7 (___) ___-__-__" required>
                     </label>
                     <button>Оставить заявку</button>
                     <div class="rules">
                         <label for="checkedForm_callModal" class="checkboxMain flex">
                             <input type="checkbox" name="checkedForm_callModal" id="checkedForm_callModal" required="" checked="">
                             <i class="icon-checkmark-square-svgrepo-com"></i>
-                            <p>Я принимаю <a href="">условия передачи информации</a></p>
+                            <p>Я принимаю <a href="./policy.html" target="_blank">условия передачи информации</a></p>
                         </label>
                     </div>
                 </form>
@@ -224,7 +230,7 @@
     <div class="modal__content">
        <div class="main flex">
             <div class="picture">
-                <img src="https://www.eco-chistka.ru/files/604/86cb749474/shutterstock_435176716.jpg" alt="">
+                <img src="./assets/images/about/2.jpg" alt="">
             </div>
             <div class="modalForm">
                 <h2>Заказ химчистки</h2>
@@ -235,19 +241,19 @@
                 <form action="">
                     <label for="" class="labelMain">
                         <p>Введите ваше имя:</p>
-                        <input type="text" placeholder="Антон">
+                        <input type="text" placeholder="Александр" required>
                     </label>
 
                     <label for="" class="labelMain">
                         <p>Введите ваш телефон:</p>
-                        <input type="text" placeholder="+7 (___) ___-__-__">
+                        <input type="text" placeholder="+7 (___) ___-__-__" required>
                     </label>
                     <button>Оставить заявку</button>
                     <div class="rules">
                         <label for="checkedForm_callModal" class="checkboxMain flex">
                             <input type="checkbox" name="checkedForm_callModal" id="checkedForm_callModal" required="" checked="">
                             <i class="icon-checkmark-square-svgrepo-com"></i>
-                            <p>Я принимаю <a href="">условия передачи информации</a></p>
+                            <p>Я принимаю <a href="./policy.html" target="_blank">условия передачи информации</a></p>
                         </label>
                     </div>
                 </form>
