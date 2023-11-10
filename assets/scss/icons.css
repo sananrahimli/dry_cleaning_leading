@@ -1,0 +1,87 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?sj2yz5');
+  src:  url('../fonts/icomoon.eot?sj2yz5#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?sj2yz5') format('truetype'),
+    url('../fonts/icomoon.woff?sj2yz5') format('woff'),
+    url('../fonts/icomoon.svg?sj2yz5#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: never;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-paper-plane-svgrepo-com:before {
+  content: "\e90f";
+}
+.icon-checkmark-square-svgrepo-com:before {
+  content: "\e910";
+}
+.icon-phone-svgrepo-com2:before {
+  content: "\e911";
+}
+.icon-user-svgrepo-com:before {
+  content: "\e912";
+}
+.icon-message-bubble-svgrepo-com:before {
+  content: "\e913";
+}
+.icon-payment-method:before {
+  content: "\e90a";
+}
+.icon-timer-clock:before {
+  content: "\e90b";
+}
+.icon-chemistry-tube:before {
+  content: "\e90c";
+}
+.icon-quality-medal:before {
+  content: "\e90d";
+}
+.icon-cleaning-service:before {
+  content: "\e90e";
+}
+.icon-location:before {
+  content: "\e908";
+}
+.icon-call:before {
+  content: "\e909";
+}
+.icon-email:before {
+  content: "\e900";
+}
+.icon-instagram:before {
+  content: "\e901";
+}
+.icon-vk:before {
+  content: "\e902";
+}
+.icon-whatsapp:before {
+  content: "\e903";
+}
+.icon-telegram:before {
+  content: "\e904";
+}
+.icon-cleaning:before {
+  content: "\e905";
+}
+.icon-clock:before {
+  content: "\e906";
+}
+.icon-cursor:before {
+  content: "\e907";
+}
