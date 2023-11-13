@@ -37,12 +37,27 @@ body {
 }
 
 header {
-    
+    min-height: 95px;
+    z-index: 20;
     nav {
         padding: 1.3rem 0;
         border-bottom: 1px solid #e4e4e4;
+        transition: all 1s;
+        & > .container > .flex {
+
         justify-content: space-between;
         align-items: center;
+        }
+        &.fixedMenu {
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            transition: all .6s;
+            z-index: 99;
+            background-color: rgba(#F6F8FD, .8);
+            backdrop-filter: blur(10px);
+        }
         .header__logo {
             a {
                 display: inline-block;
@@ -79,12 +94,13 @@ header {
                         position: absolute;
                         left: 0;
                         bottom: -5px;
-                        width: 20px;
+                        width: 0;
                         height: 3px;
                         border-radius: 1rem;
                         background-color: $col1;
                         box-shadow: $box-shadow;
                         opacity: 0;
+                        transition: all .5s;
                     }
                     &:hover {
                         color: $col1;
@@ -95,6 +111,7 @@ header {
                         color: $col1;
                         &::before {
                             opacity: 1;
+                            width: 20px;
                         }
                     }
                 }
@@ -114,6 +131,7 @@ header {
                     background-color: transparent;
                     color: $col1;
                     border-color: $col1;
+                    box-shadow: $box-shadow;
                 }
             }
             a.feedback_call {
@@ -131,10 +149,15 @@ header {
                 &:hover {
                     background-color: $col1;
                     color: #fff;
+                    box-shadow: $box-shadow;
                 }
             }
-            a:hover {
-                box-shadow: $box-shadow;
+            a.phoneLink {
+                color: $col1;
+                border-bottom: 1px dotted $col1;
+                &:hover {
+                    border-bottom: 1px solid $col1;
+                }
             }
         }
     }
@@ -678,6 +701,47 @@ section#obrabotka {
             border-style: solid;
         }
     }
+    .sendWhatsapp {
+        width: 80%;
+        margin: 0 auto;
+        padding: 3rem 0;
+        align-items: center;
+        .sendWhatsapp_informer {
+            width: 50%;
+            h2 {
+                font-size: 3rem;
+                text-transform: uppercase;
+                margin-bottom: 0.6rem;
+                line-height: 1;
+                font-weight: 900;
+            }
+            h3 {
+                font-size: 1.4rem;
+                font-weight: 400;
+            }
+            .link {
+                margin-top: 2rem;
+                a {
+                    align-items: center;
+                    background-color: $col1;
+                    padding: .5rem 1rem;
+                    color: #fff;
+                    font-size: 1.4rem;
+                    border-radius: 3rem;
+                    font-weight: 200;
+                }
+            }
+        }
+        .sendWhatsapp_picture {
+            width: 50%;
+            padding-left: 2rem;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
 }
 
 
@@ -925,6 +989,7 @@ section#reviews {
         .reviews_slider {
             width: 45%;
             padding-right: 1.5rem;
+            z-index: 9;
             .swiper-button-next {
                 background-color: #ccc;
                 top: auto;
@@ -1302,26 +1367,49 @@ footer {
             padding-right: 1rem;
             ul.links {
                 column-gap: 1.5rem;
-                margin-top: 2rem;
+                margin-top: 3rem;
                 li {
                     a {
-                        font-size: .9rem;
+                        font-size: .8rem;
+                        
                         color: $col1;
                         border-bottom: 1px dotted $col1;
                         &:hover {
                             border-bottom: 1px solid $col1;
                         }
+                        &.developmentof {
+                            border: none;
+                            color: rgba($col1, .4);
+                            word-break: break-all;
+                            &::before {
+                                content: 'development sr';
+                                position: absolute;
+                                left: 0;
+                                top: 0;
+                                color: $col1;
+                                width: 0;
+                                overflow: hidden;
+                                transition: all .5s;
+                                word-break: break-all;
+                                height: 16.5px;
+                            }
+                            &:hover::before {
+                                width: 100%;
+                            }
+                        }
                     }
+
                 }
             }
         }
         .right {
             width: 50%;
-            padding-top: 2rem;
+            padding-top: 1rem;
             .buttons {
                 justify-content: space-between;
                 margin-bottom: 1.5rem;
-                button {
+                button, a {
+                    display: block;
                     width: 49%;
                     border: none;
                     background-color: $col1;
@@ -1333,6 +1421,7 @@ footer {
                     cursor: pointer;
                     box-shadow: $box-shadow;
                 }
+                a {font-size: 1.1rem;}
             }
             .rekviziti {
                 background-color: #fff;
@@ -1342,9 +1431,11 @@ footer {
                 max-height: 300px;
                 overflow: hidden;
                 transition: all .4s;
+                color: #ccc;
                 &.active {
                     max-height: 550px;
                     padding-bottom: 2rem;
+                    color: $col2;
                     button#moreRekz {
                         height: 30px;
                         &::before {content: 'Свернуть';}
@@ -1430,15 +1521,17 @@ footer {
         border-radius: 2rem;
         width: 95%;
         max-width: 800px;
+        mih-height: 100vh;
 
         .main {
             border-radius: 2rem;
             border: 1px solid #eee;
             overflow: hidden;
             justify-content: space-between;
+            height: 100%;
             .picture {
                 width: 44%;
-                height: 600px;
+                height: 100%;
                 border-radius: 2rem;
                 img {
                     width: 100%;
@@ -1664,7 +1757,7 @@ section#policy {
     footer .footer_info .right .buttons {
         flex-direction: column;
         row-gap: .5rem;
-        button {
+        button, a {
             width: 100%;
             font-size: 1.1rem;
         }
@@ -1684,6 +1777,9 @@ section#policy {
     }
 }
 
+@media screen and (max-width: 1090px) {
+    header nav .header__feedback a.feedback_call {display: none;}
+}
 
 @media screen and (max-width: 1024px) {
     header {

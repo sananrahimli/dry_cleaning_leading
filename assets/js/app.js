@@ -165,6 +165,14 @@ yakorLink.forEach((link) => {
         let href = this.getAttribute('href'); 
         let targetElement = document.querySelector(href); 
 
+        yakorLink.forEach((li) => {
+            li.classList.remove('active');
+        });
+
+        link.classList.add('active');
+
+        
+
         window.scrollTo({
             top: targetElement.offsetTop,
             behavior: 'smooth'
@@ -206,3 +214,21 @@ burgerMenu.addEventListener('click', function(e){
     burgerMenu.classList.toggle('active');
     header__menu.classList.toggle('openMenu')
 })
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    var menu = document.querySelector("header nav");
+    var header = document.querySelector("header");
+    var headerHeight = header.offsetHeight;
+  
+    window.addEventListener("scroll", function() {
+      if (window.scrollY > headerHeight) {
+        menu.classList.add('fixedMenu')
+      } else {
+        menu.classList.remove('fixedMenu')
+      }
+    });
+  });
+  

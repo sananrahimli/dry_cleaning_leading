@@ -36,11 +36,29 @@ body {
   margin: 0 auto;
 }
 
+header {
+  min-height: 95px;
+  z-index: 20;
+}
 header nav {
   padding: 1.3rem 0;
   border-bottom: 1px solid #e4e4e4;
+  transition: all 1s;
+}
+header nav > .container > .flex {
   justify-content: space-between;
   align-items: center;
+}
+header nav.fixedMenu {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  transition: all 0.6s;
+  z-index: 99;
+  background-color: rgba(246, 248, 253, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
 }
 header nav .header__logo a {
   display: inline-block;
@@ -78,12 +96,13 @@ header nav ul.header__menu li a::before {
   position: absolute;
   left: 0;
   bottom: -5px;
-  width: 20px;
+  width: 0;
   height: 3px;
   border-radius: 1rem;
   background-color: #486BF0;
   box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
   opacity: 0;
+  transition: all 0.5s;
 }
 header nav ul.header__menu li a:hover {
   color: #486BF0;
@@ -93,6 +112,7 @@ header nav ul.header__menu li.active a {
 }
 header nav ul.header__menu li.active a::before {
   opacity: 1;
+  width: 20px;
 }
 header nav .header__feedback {
   -moz-column-gap: 1rem;
@@ -111,6 +131,7 @@ header nav .header__feedback a.feedback_online:hover {
   background-color: transparent;
   color: #486BF0;
   border-color: #486BF0;
+  box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 }
 header nav .header__feedback a.feedback_call {
   border: 2px solid #486BF0;
@@ -128,9 +149,14 @@ header nav .header__feedback a.feedback_call i {
 header nav .header__feedback a.feedback_call:hover {
   background-color: #486BF0;
   color: #fff;
-}
-header nav .header__feedback a:hover {
   box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
+}
+header nav .header__feedback a.phoneLink {
+  color: #486BF0;
+  border-bottom: 1px dotted #486BF0;
+}
+header nav .header__feedback a.phoneLink:hover {
+  border-bottom: 1px solid #486BF0;
 }
 
 section#main {
@@ -672,6 +698,48 @@ section#obrabotka button {
 section#obrabotka button:hover {
   border-style: solid;
 }
+section#obrabotka .sendWhatsapp {
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem 0;
+  align-items: center;
+}
+section#obrabotka .sendWhatsapp .sendWhatsapp_informer {
+  width: 50%;
+}
+section#obrabotka .sendWhatsapp .sendWhatsapp_informer h2 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin-bottom: 0.6rem;
+  line-height: 1;
+  font-weight: 900;
+}
+section#obrabotka .sendWhatsapp .sendWhatsapp_informer h3 {
+  font-size: 1.4rem;
+  font-weight: 400;
+}
+section#obrabotka .sendWhatsapp .sendWhatsapp_informer .link {
+  margin-top: 2rem;
+}
+section#obrabotka .sendWhatsapp .sendWhatsapp_informer .link a {
+  align-items: center;
+  background-color: #486BF0;
+  padding: 0.5rem 1rem;
+  color: #fff;
+  font-size: 1.4rem;
+  border-radius: 3rem;
+  font-weight: 200;
+}
+section#obrabotka .sendWhatsapp .sendWhatsapp_picture {
+  width: 50%;
+  padding-left: 2rem;
+}
+section#obrabotka .sendWhatsapp .sendWhatsapp_picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
 
 section#services {
   margin: 3rem 0;
@@ -911,6 +979,7 @@ section#reviews .container > .flex {
 section#reviews .container > .flex .reviews_slider {
   width: 45%;
   padding-right: 1.5rem;
+  z-index: 9;
 }
 section#reviews .container > .flex .reviews_slider .swiper-button-next {
   background-color: #ccc;
@@ -1275,25 +1344,46 @@ footer .footer_info .left {
 footer .footer_info .left ul.links {
   -moz-column-gap: 1.5rem;
        column-gap: 1.5rem;
-  margin-top: 2rem;
+  margin-top: 3rem;
 }
 footer .footer_info .left ul.links li a {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #486BF0;
   border-bottom: 1px dotted #486BF0;
 }
 footer .footer_info .left ul.links li a:hover {
   border-bottom: 1px solid #486BF0;
 }
+footer .footer_info .left ul.links li a.developmentof {
+  border: none;
+  color: rgba(72, 107, 240, 0.4);
+  word-break: break-all;
+}
+footer .footer_info .left ul.links li a.developmentof::before {
+  content: "development sr";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #486BF0;
+  width: 0;
+  overflow: hidden;
+  transition: all 0.5s;
+  word-break: break-all;
+  height: 16.5px;
+}
+footer .footer_info .left ul.links li a.developmentof:hover::before {
+  width: 100%;
+}
 footer .footer_info .right {
   width: 50%;
-  padding-top: 2rem;
+  padding-top: 1rem;
 }
 footer .footer_info .right .buttons {
   justify-content: space-between;
   margin-bottom: 1.5rem;
 }
-footer .footer_info .right .buttons button {
+footer .footer_info .right .buttons button, footer .footer_info .right .buttons a {
+  display: block;
   width: 49%;
   border: none;
   background-color: #486BF0;
@@ -1305,6 +1395,9 @@ footer .footer_info .right .buttons button {
   cursor: pointer;
   box-shadow: rgba(149, 157, 165, 0.3) 0px 8px 24px;
 }
+footer .footer_info .right .buttons a {
+  font-size: 1.1rem;
+}
 footer .footer_info .right .rekviziti {
   background-color: #fff;
   border-radius: 2rem;
@@ -1313,10 +1406,12 @@ footer .footer_info .right .rekviziti {
   max-height: 300px;
   overflow: hidden;
   transition: all 0.4s;
+  color: #ccc;
 }
 footer .footer_info .right .rekviziti.active {
   max-height: 550px;
   padding-bottom: 2rem;
+  color: #000252;
 }
 footer .footer_info .right .rekviziti.active button#moreRekz {
   height: 30px;
@@ -1400,16 +1495,18 @@ footer .footer_info .logo h2 span {
   border-radius: 2rem;
   width: 95%;
   max-width: 800px;
+  mih-height: 100vh;
 }
 .modal .modal__content .main {
   border-radius: 2rem;
   border: 1px solid #eee;
   overflow: hidden;
   justify-content: space-between;
+  height: 100%;
 }
 .modal .modal__content .main .picture {
   width: 44%;
-  height: 600px;
+  height: 100%;
   border-radius: 2rem;
 }
 .modal .modal__content .main .picture img {
@@ -1626,7 +1723,7 @@ section#policy p {
     flex-direction: column;
     row-gap: 0.5rem;
   }
-  footer .footer_info .right .buttons button {
+  footer .footer_info .right .buttons button, footer .footer_info .right .buttons a {
     width: 100%;
     font-size: 1.1rem;
   }
@@ -1642,6 +1739,11 @@ section#policy p {
   }
   footer .footer_info .left ul.links {
     flex-direction: column;
+  }
+}
+@media screen and (max-width: 1090px) {
+  header nav .header__feedback a.feedback_call {
+    display: none;
   }
 }
 @media screen and (max-width: 1024px) {

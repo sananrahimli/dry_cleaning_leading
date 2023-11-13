@@ -9,8 +9,10 @@
 </head>
 <body>
  <header>
-    <div class="container">
         <nav class="flex">
+
+        <div class="container">
+            <div class="flex">
             <div class="header__logo">
                 <a href="">
                     <p>Чистое</p>
@@ -21,19 +23,21 @@
                 <li class="active"><a href="">Главная</a></li>
                 <li><a href="#prices">Цены</a></li>
                 <li><a href="#reviews">Отзывы</a></li>
-                <li><a href="#">Компаниям</a></li>
+                <li><a href="#about">Компаниям</a></li>
                 <li><a href="#question">FAQ</a></li>
                 <li><a href="#footer">Контакты</a></li>
             </ul>
             <div class="header__feedback flex">
                 <a href="" class="feedback_online modalOpen" data-modal="feedback_order">Онлайн заявка</a>
                 <a href="" class="feedback_call modalOpen" data-modal="feedback_callModal">Бесплатный звонок <i class="icon-call"></i></a>
+                <a href="tel:+79081410741" class="phoneLink">+7(908)141-07-41</a>
             </div>
             <div id="mobileBurger" style="display: none;">
                 <button id="burgerMenu"><i></i><i></i><i></i></button>
             </div>
+        </div>
+            </div>
         </nav>
-    </div>
  </header>
  
  <section id="main">
@@ -130,7 +134,7 @@
                     <div class="list_top flex"><i class="icon-chemistry-tube"></i><span>03</span></div>
                     <div class="list_text">
                         <p>БЕЗОПАСНАЯ ХИМИЯ</p>
-                        <span>Сертифицированная биоразлагаемые средства от мировых лидеров индустрии «Chemspec» (США) и  «Global» (Польша)</span>
+                        <span>Сертифицированные биоразлагаемые средства от мировых лидеров индустрии «Chemspec» (США) и  «Global» (Польша)</span>
                     </div>
                 </li>
                 <li>
@@ -174,13 +178,13 @@
                 </h2>
                 <a href="" class="whatsapp flex">
                     <i class="icon-whatsapp"></i>
-                    <span>Консультацию по фото в WhatsApp (бесплатно)</span>
+                    <span>Консультацию по фото в WhatsApp</span>
                 </a>
             </div>
             <div class="consultation__form">
                 <form action="">
                     <label for="" class="input"><i class="icon-user-svgrepo-com"></i><input type="text" placeholder="Имя, фамилия"></label>
-                    <label for="" class="input"><i class="icon-phone-svgrepo-com2"></i><input type="text" class="phoneNumber" placeholder="Номер телефона"></label>
+                    <label for="" class="input"><i class="icon-phone-svgrepo-com2"></i><input type="text" class="phoneNumber" placeholder="Номер телефона" required></label>
                     <label for="" class="textarea">
                         <i class="icon-message-bubble-svgrepo-com"></i>
                         <textarea name="" id="" cols="30" rows="5" placeholder="Опишите проблему по химчистке(необязательно)"></textarea>
@@ -253,14 +257,8 @@
                 <div class="product__item">
                     <img src="./assets/images/products/sofas/6.png" alt="">
                     <div class="price">от 4000 ₽</div>
-                    <h3 class="name">ДИВАН УГЛОВОЙ СТАНДАРТ (ДО 220 СМ)</h3>
+                    <h3 class="name">ДИВАН УГЛОВОЙ СТАНДАРТ И ЕВРОКНИЖКА</h3>
                     <button data-modal="feedback_orderProduct" data-image="./assets/images/products/sofas/6.png" data-name="ДИВАН УГЛОВОЙ СТАНДАРТ (ДО 220 СМ)">Заказать</button>
-                </div>
-                <div class="product__item">
-                    <img src="./assets/images/products/sofas/7.png" alt="">
-                    <div class="price">от 4000 ₽</div>
-                    <h3 class="name">ДИВАН УГЛОВОЙ ЕВРОКНИЖКА</h3>
-                    <button data-modal="feedback_orderProduct" data-image="./assets/images/products/sofas/7.png" data-name="ДИВАН УГЛОВОЙ ЕВРОКНИЖКА">Заказать</button>
                 </div>
                 <div class="product__item">
                     <img src="./assets/images/products/sofas/8.png" alt="">
@@ -282,7 +280,7 @@
                 </div>
                 <div class="product__item">
                     <img src="./assets/images/products/sofas/11.png" alt="">
-                    <div class="price"><p>рассчитывается <br>индивидуально</p></div>
+                    <div class="price"><p>Выдвижной <br>механизм в подарок!</p></div>
                     <h3 class="name">Мебель сложной формы (каретная стяжка, барокко и т.д.)</h3>
                     <button data-modal="feedback_orderProduct" data-image="./assets/images/products/sofas/11.png" data-name="Мебель сложной формы (каретная стяжка, барокко и т.д.)">Заказать</button>
                 </div>
@@ -300,7 +298,7 @@
 
                 <div class="product__item">
                     <img src="./assets/images/products/chairs/2.png" alt="">
-                    <div class="price">от 250 ₽</div>
+                    <div class="price">от 350 ₽</div>
                     <h3 class="name">СТУЛ (СИДЕННЬЕ + СПИНКА) </h3>
                     <button data-modal="feedback_orderProduct" data-image="./assets/images/products/chairs/2.png" data-name="СТУЛ (СИДЕННЬЕ + СПИНКА) ">Заказать</button>
                 </div> 
@@ -432,14 +430,26 @@
 
 <section id="obrabotka">
     <div class="container">
-       <div class="flex">
-        <div class="obrabotka__left">
-            <p class="title">АНТИБАКТОРИАЛЬНАЯ ОБРАБОТКА В ПОДАРОК!</p>
-            <p class="description">Выдвижная секция входит в стоимость чистки!</p>
+        <div class="flex">
+         <div class="obrabotka__left">
+             <p class="title">АНТИБАКТОРИАЛЬНАЯ ОБРАБОТКА В ПОДАРОК!</p>
+         </div>
+         <div class="obrabotka__right">
+             <button class="modalOpen" data-modal="feedback_callModal">Хочу подарок</button>
+         </div>
         </div>
-        <div class="obrabotka__right">
-            <button class="modalOpen" data-modal="feedback_callModal">Хочу подарок</button>
+        <br>
+       <div class="flex sendWhatsapp">
+        <div class="sendWhatsapp_informer">
+            <h2>Не нашли свою мебель?</h2>
+            <h3>Оценим стоимость и время работы по фото</h3>
+            <div class="link">
+                <a href="https://wa.me/+79081410741"><span class="icon-paper-plane-svgrepo-com"></span> Отправить фото</a>
+            </div>
         </div>
+            <div class="sendWhatsapp_picture">
+                <img src="./assets/images/camera.png" alt="">
+            </div>
        </div>
     </div>
 </section>
@@ -452,7 +462,7 @@
             <div class="services__borderContent">
                 <h2>ДОПОЛНИТЕЛЬНЫЕ УСЛУГИ</h2>
                 <ul class="listOne">
-                    <li>Удаление очень сильного запаха с использованием специализированного средства +30% к стоимости.</li>
+                    <li>Удаление запаха с использованием специализированного средства +30% к стоимости.</li>
                     <li>Химчистка мебели в разобранном состоянии + 30-50% к стоимости.</li>
                     <li>Химчистка текстильной обивки производится на всей поверхности, доступ к которой предоставлен клиентом.</li>
                 </ul>
@@ -461,7 +471,7 @@
             <div class="services__blockContent">
                 <h3>ВЫЕЗД НА ХИМЧИСТКУ МЕБЕЛИ И КОВРОВ</h3>
                     <p><i class="icon-location"></i> По г. Воронеж - БЕСПЛАТНО</p>
-                    <p><i class="icon-location"></i> В прилегающие районы (Семилуки, Шилова, Ямное, Н-Усмань, Отрадное)- БЕСПЛАТНО</p>
+                    <p><i class="icon-location"></i> В прилегающие районы (Семилуки, Шилова, Ямное, Н-Усмань, Отрадное)- при заказе от 4000руб. БЕСПЛАТНО</p>
                     
                     <p class="desc">В более отдаленные районы рассчитывается индивидуально</p>
                     <button class="modalOpen" data-modal="feedback_order"><i class="icon-location"></i> Узнать стоимость</button>
@@ -510,7 +520,7 @@
                     <img src="./assets/images/cleaning/item_4.jpg" alt="">
                     <div class="text">
                     <h2>УДАЛЕНИЕ СЛОЖНЫХ ПЯТЕН</h2>
-                    <p class="desc">наем как удалить 90% пятен с дивана и ковра.</p>
+                    <p class="desc">Знаем как удалить более 95% пятен с дивана и ковра.</p>
                 </div>
                 </div>
 
@@ -534,9 +544,9 @@
         <h2>Хотите избавиться от загрязнений прямо сейчас?</h2>
         <div class="inputs flex">
                     <input type="text" placeholder="Имя">
-                    <input type="text" placeholder="Телефон">
+                    <input type="text" placeholder="Телефон" required>
                     <p>Нажимая на кнопку, вы принимаете Положение и Согласие на обработку персональных данных.</p>
-                    <button>Оставить заявку</button>
+                    <button type="submit">Оставить заявку</button>
         </div>
         </form>
     </div>
@@ -568,11 +578,15 @@
                         <div class="swiper-slide">
                             <div class="review__item">
                                 <div class="flex">
-                                    <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur dignissimos, libero culpa minus exercitationem quidem ex nihil iusto quo sit!</div>
+                                    <div class="text">
+                                       Хотелось бы поблагодарить, за качественно оказанную услугу.
+                                       Диван теперь в превосходном состоянии.
+                                       Даже после высыхания, не осталось ни единного пятнышка. 
+                                       Я притяно удивлена, обязательно обращюсь к вам еще!!!
+                                    </div>
                                     <div class="picture">
                                         <p>Результат:</p>
-                                        <a href=""><img src="./assets/images/reviews/1.jpg" alt=""></a>
-                                        <a href=""><img src="./assets/images/reviews/2.jpg" alt=""></a>
+                                        <a href=""><img src="./assets/images/reviews/wp1.jpeg" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="auther">
@@ -585,15 +599,38 @@
                         <div class="swiper-slide">
                             <div class="review__item">
                                 <div class="flex">
-                                    <div class="text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur dignissimos, libero culpa minus exercitationem quidem ex nihil iusto quo sit!</div>
+                                    <div class="text">
+                                        Отличная работа! Качественно, быстро, без лишних заморочек!
+                                        Компетентный Мастер, полностью доволен его работой. В дальнейшем буду обращаться еще.
+                                        Рекомендую!
+                                    </div>
                                     <div class="picture">
                                         <p>Результат:</p>
-                                        <a href=""><img src="./assets/images/reviews/1.jpg" alt=""></a>
-                                        <a href=""><img src="./assets/images/reviews/2.jpg" alt=""></a>
+                                        <a href=""><img src="./assets/images/reviews/wp2.jpeg" alt=""></a>
                                     </div>
                                 </div>
                                 <div class="auther">
-                                    <p class="name">Лариса</p>
+                                    <p class="name">Евгений</p>
+                                    <p class="city">г. Воронеж</p>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <div class="swiper-slide">
+                            <div class="review__item">
+                                <div class="flex">
+                                    <div class="text">
+                                       Добрый день. <br>
+                                       Все замечательно, спасибо вам огромное!
+                                    </div>
+                                    <div class="picture">
+                                        <p>Результат:</p>
+                                        <a href=""><img src="./assets/images/reviews/wp3.jpeg" alt=""></a>
+                                    </div>
+                                </div>
+                                <div class="auther">
+                                    <p class="name">Павел</p>
                                     <p class="city">г. Воронеж</p>
                                 </div>
                             </div>
@@ -670,7 +707,7 @@
 <section id="question">
     <div class="container">
         <div class="flex namePage">
-            <span>FAQ</span>
+            <span>ВОПРОСЫ</span>
         </div>
         <h2 class="titlePage">Частые вопросы</h2>
         <ul class="questionItem">
@@ -767,12 +804,13 @@
                     <ul class="links flex">
                         <li><a href="./policy.html" target="_blank">Политическая конфиденциальность</a></li>
                         <li><a href="./policy.html" target="_blank">Правила</a></li>
+                        <li><a href="https://sananrahimli.github.io/" class="developmentof" target="_blank">development sr</a></li>
                     </ul>
                </div>
                <div class="right">
                 <div class="buttons flex">
                     <button class="modalOpen" data-modal="feedback_callModal">Перезвоните мне</button>
-                    <button>Подписаться на новости</button>
+                    <a href="#">Подписаться на новости</a>
                 </div>
                 <div class="rekviziti">
                     <h4>Реквизиты</h4>
